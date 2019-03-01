@@ -73,6 +73,9 @@ helm repo update
 helm install -n eventstore eventstore/eventstore
 ```
 
+> [!NOTE]
+> Read [this guide](https://github.com/EventStore/EventStore.Charts/blob/master/stable/eventstore/README.md) for more details on how to use the helm chart.
+
 ### [macOS](#tab/tabid-macos)
 
 Event Store has a macOS package [you can download](https://eventstore.org/downloads/) and install, and we maintain a Homebrew Cask formula you can install:
