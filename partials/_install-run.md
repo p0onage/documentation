@@ -63,6 +63,16 @@ Event Store has [a Docker image](https://hub.docker.com/r/eventstore/eventstore/
 docker run --name eventstore-node -it -p 2113:2113 -p 1113:1113 eventstore/eventstore
 ```
 
+### [Kubernetes](#tab/tabid-k8)
+
+Event Store has [a Helm chart](https://github.com/EventStore/EventStore.Charts) available for installing Event Store on Kubernetes clusters:
+
+```bash
+helm repo add eventstore https://eventstore.github.io/EventStore.Charts
+helm repo update
+helm install -n eventstore eventstore/eventstore
+```
+
 ### [macOS](#tab/tabid-macos)
 
 Event Store has a macOS package [you can download](https://eventstore.org/downloads/) and install, and we maintain a Homebrew Cask formula you can install:
