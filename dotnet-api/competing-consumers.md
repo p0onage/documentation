@@ -166,6 +166,9 @@ Clients must acknowledge (or not acknowledge) messages in the competing consumer
 
 You can choose to not auto-ack messages. This can be useful when you have multi-threaded processing of messages in your subscriber and need to pass control to something else. There are methods on the subscription object that you can call `Acknowledge,` and `NotAcknowledge` both take a `ResolvedEvent` (the one you processed) both also have overloads for passing and `IEnumerable<ResolvedEvent>`.
 
+> [!NOTE]
+> You may notice current and known messages not keeping in sync on the Event Store persistant subscriptions tab after acknowleding the event. This may be because of the default Min CheckPoint Count field being set to 10 on the settings which means the known/current message only syncs after the checkpoint is hit.
+
 ## Consumer Strategies
 
 When creating a persistent subscription, the settings allow for different consumer strategies via the `WithNamedConsumerStrategy` method. Built-in strategies are defined in the enum `SystemConsumerStrategies`.
